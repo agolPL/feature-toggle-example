@@ -1,3 +1,4 @@
 
 info.runtime.features:
-  new-feature: false
+  newFeature: false
+  extendFeature: false
