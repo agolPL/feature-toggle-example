@@ -1,0 +1,36 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.5.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'pl.agol.example'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compileOnly('org.projectlombok:lombok:1.16.4')
+
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.togglz:togglz-spring-boot-starter:2.6.1.Final")
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.spockframework:spock-core:1.1-groovy-2.4')
+    testCompile('org.codehaus.groovy:groovy-all:2.4.12')
+}
