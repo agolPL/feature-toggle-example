@@ -11,7 +11,7 @@ import pl.agol.example.setup.Features;
 @RestController
 @RequestMapping("/api/newfeature")
 @RequiredArgsConstructor
-@ConditionalOnProperty(name = Features.NEW_FEATURE, havingValue = "true")
+@ConditionalOnProperty(name = "togglz.features.NEW_FEATURE.enabled", havingValue = "true")
 class NewFeatureController {
 
     private final NewFeatureService newFeatureService;

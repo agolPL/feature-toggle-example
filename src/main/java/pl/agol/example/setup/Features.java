@@ -1,19 +1,14 @@
 package pl.agol.example.setup;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.togglz.core.Feature;
+import org.togglz.core.context.FeatureContext;
 
-@Setter
-@Getter
-@Component
-@ConfigurationProperties(prefix = "info.runtime.features")
-public class Features {
 
-    public static final String NEW_FEATURE = "info.runtime.features.newFeature";
-    public static final String EXTEND_FEATURE = "info.runtime.features.extendFeature";
+public enum Features implements Feature {
 
-    private boolean newFeature;
-    private boolean extendFeature;
+    NEW_FEATURE, EXTEND_FEATURE;
+
+    public boolean isActive() {
+        return FeatureContext.getFeatureManager().isActive(this);
+    }
 }

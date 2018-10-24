@@ -1,4 +1,17 @@
 
-info.runtime.features:
-  newFeature: false
-  extendFeature: false
+togglz:
+  features:
+    NEW_FEATURE:
+      enabled: false
+    EXTEND_FEATURE:
+      enabled: false
+
+  console:
+    enabled: true
+    secured: false
+    path: /togglz-console
+    use-management-port: false
+
+  endpoint:
+    enabled: true
+    id: togglz

@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import pl.agol.example.setup.Features;
 
 @Configuration
-@ConditionalOnProperty(name = Features.NEW_FEATURE, havingValue = "true")
+@ConditionalOnProperty(name = "togglz.features.NEW_FEATURE.enabled", havingValue = "true")
 class NewFeatureConfiguration {
 
     @Bean

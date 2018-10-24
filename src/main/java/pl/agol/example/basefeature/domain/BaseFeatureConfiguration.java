@@ -2,13 +2,13 @@ package pl.agol.example.basefeature.domain;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.agol.example.setup.Features;
+import org.togglz.core.manager.FeatureManager;
 
 @Configuration
 class BaseFeatureConfiguration {
 
     @Bean
-    BaseFeatureService baseFeatureService(Features features) {
-        return new BaseFeatureService(features);
+    BaseFeatureService baseFeatureService(FeatureManager featureManager) {
+        return new BaseFeatureService(featureManager);
     }
 }

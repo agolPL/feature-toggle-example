@@ -27,10 +27,11 @@ dependencies {
 
     compileOnly('org.projectlombok:lombok:1.16.4')
 
+    compile("org.togglz:togglz-spring-boot-starter:2.6.1.Final")
+    compile("org.togglz:togglz-console:2.6.1.Final")
+
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.boot:spring-boot-starter-web')
-    
-    compile("org.togglz:togglz-spring-boot-starter:2.6.1.Final")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.spockframework:spock-core:1.1-groovy-2.4')
